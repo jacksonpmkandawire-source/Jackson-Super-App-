@@ -1,28 +1,29 @@
-
 import streamlit as st
 
-st.set_page_config(page_title="Jackson Super App", page_icon="👑", layout="centered")
+st.set_page_config(page_title="Jackson Super App", page_icon="👑", layout="wide")
 
-st.markdown("<h1 style='text-align: center; color: gold;'>👑 JACKSON SUPER APP 👑</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: white;'>SUPREME FOUNDER 300B EDITION</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<h2 style='color: gold;'>👑 JACKSON MENU</h2>", unsafe_allow_html=True)
+room = st.sidebar.radio("SANKHANI CHIPINDA:", ["🏠 HOME SCREEN", "🎬 CINEMA & BETTING", "🎤 MUSIC STUDIO", "💰 REVENUE VAULT"])
 
-# THE INTERACTIVE BUTTONS LOGIC
-if st.button("🎬 CINEMA"):
-    st.balloons()
-    st.info("🚀 Jackson Cinema ikukonza mavidiyo a mabiliyoni...")
+if room == "🏠 HOME SCREEN":
+    st.markdown("<h1 style='text-align: center; color: gold;'>👑 JACKSON SUPER APP 👑</h1>", unsafe_allow_html=True)
+    st.success("VAULT STATUS: 300,000,000,000 SYNCED ✅")
 
-if st.button("🎤 STUDIO"):
-    st.balloons()
-    st.info("🎤 Jack Amapiano Studio yadzuka panthawi yomweyo!")
+elif room == "🎬 CINEMA & BETTING":
+    st.title("🎬 CINEMA & ⚽ BET PREDICTIONS")
+    st.markdown("### Today's Top Predictions (April 7, 2026)")
+    st.info("🚀 Prediction 1: Real Madrid vs Man City - Home Win (2.10)")
+    st.info("🚀 Prediction 2: Arsenal vs Bayern - Over 2.5 Goals (1.85)")
+    st.success("Cinema Hub: Watch Live Football & Dance Challenges Active ✅")
 
-if st.button("💬 SOCIAL"):
-    st.balloons()
-    st.info("🌍 Jackson Social ikulumikiza dziko lonse lero!")
+elif room == "🎤 MUSIC STUDIO":
+    st.title("🎤 JACK AMAPIANO STUDIO")
+    st.audio("https://soundhelix.com")
 
-if st.button("💰 REVENUE"):
-    st.balloons()
-    st.success("🏦 REVENUE STATUS: K2,000,000 READY FOR PAYOUT! ✅")
-    st.write("Jackson, ndalama za suti yatsopano zayamba kuloŵera mu Vault!")
-
-st.markdown("<br><div style='background-color: #1b5e20; padding: 15px; border-radius: 10px; text-align: center; color: white;'>VAULT STATUS: 300,000,000,000 SYNCED ✅</div>", unsafe_allow_html=True)
-st.markdown("<br><p style='text-align: center; color: #90caf9;'>Founder: Jackson Mkandawire - Universal Discovery Master</p>", unsafe_allow_html=True)
+elif room == "💰 REVENUE VAULT":
+    st.title("💰 PRIVATE REVENUE VAULT")
+    st.metric(label="CURRENT REVENUE", value="K3,650,000", delta="Ready for Ufa & Clothing")
+    if st.button("WITHDRAW FUNDS FOR FOOD"):
+        st.balloons()
+        st.success("MALIPIRO ATSIMIKIZIDWA! K3,650,000 ikuloŵera kwa Jackson Mkandawire! ✅")
+    
